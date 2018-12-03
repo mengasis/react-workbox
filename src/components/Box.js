@@ -4,7 +4,14 @@ import styled from 'styled-components'
 
 const Container = styled.li``
 
-const Link = styled.a``
+const Link = styled.a`
+  color: yellow;
+  text-decoration: none;
+
+  :hover {
+    color: white;
+  }
+`
 
 const Box = ({ id, title }) => (
   <Container>

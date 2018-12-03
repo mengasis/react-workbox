@@ -13,6 +13,7 @@ const Container = styled.div`
 `
 
 const Title = styled.span`
+  color: #03a9f4;
   font-size: 45px;
   font-weight: 100;
 `
