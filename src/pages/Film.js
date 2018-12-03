@@ -8,14 +8,12 @@ import Title from '../components/Title'
 class Film extends Component {
   state = { title: '' }
 
-  static async getDerivedStateFromProps(nextProps) {
-    if (this.props.match.params.id !== nextProps.match.params.id) {
-      const { data } = await axios.get(
-        `https://swapi.co/api/films/${nextProps.match.params.id}?format=json`,
-      )
+  async componentDidMount() {
+    const { data } = await axios.get(
+      `https://swapi.co/api/films/${this.props.match.params.id}?format=json`,
+    )
 
-      return { title: data.title }
-    }
+    this.setState({ title: data.title })
   }
 
   render() {
@@ -29,6 +27,10 @@ class Film extends Component {
   }
 }
 
-Film.propTypes = { title: PropTypes.string }
+Film.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({ params: PropTypes.shape({ id: PropTypes.number.isRequired }) }),
+  }).isRequired,
+}
 
 export default Film
