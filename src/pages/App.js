@@ -1,22 +1,10 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import axios from 'axios'
 
-import List from './components/List'
-import Box from './components/Box'
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`
-
-const Title = styled.span`
-  color: #03a9f4;
-  font-size: 45px;
-  font-weight: 100;
-`
+import Container from '../components/Container'
+import Title from '../components/Title'
+import List from '../components/List'
+import Box from '../components/Box'
 
 class App extends Component {
   state = { films: [] }
