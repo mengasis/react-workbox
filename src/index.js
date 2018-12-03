@@ -4,7 +4,7 @@ import './index.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
 
-import Home from './pages/App'
+import Home from './pages/Home'
 import Film from './pages/Film'
 import Error404 from './pages/Error404'
 

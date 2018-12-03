@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.li``
 
-const Link = styled.a`
+const StyleLink = styled(Link)`
   color: yellow;
   text-decoration: none;
 
@@ -15,7 +16,7 @@ const Link = styled.a`
 
 const Box = ({ id, title }) => (
   <Container>
-    <Link href={`https://swapi.co/api/films/${id}/?format=json`}>{title}</Link>
+    <StyleLink to={`/Film/${id}?format=json`}>{title}</StyleLink>
   </Container>
 )
 
