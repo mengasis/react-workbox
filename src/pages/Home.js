@@ -11,7 +11,12 @@ class App extends Component {
 
   async componentDidMount() {
     const { data } = await axios.get('https://swapi.co/api/films/?format=json')
-    const films = data.results.map(film => ({ id: film.episode_id, title: film.title })) || []
+
+    const films = data.results.map(film => ({
+      id: film.episode_id,
+      title: film.title,
+      url: film.url,
+    })) || []
 
     this.setState({ films })
   }

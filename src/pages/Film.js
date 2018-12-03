@@ -9,9 +9,8 @@ class Film extends Component {
   state = { title: '' }
 
   async componentDidMount() {
-    const { data } = await axios.get(
-      `https://swapi.co/api/films/${this.props.match.params.id}?format=json`,
-    )
+    const { location } = this.props
+    const { data } = await axios.get(`${location.state.url}?format=json`)
 
     this.setState({ title: data.title })
   }
@@ -28,8 +27,8 @@ class Film extends Component {
 }
 
 Film.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({ params: PropTypes.shape({ id: PropTypes.number.isRequired }) }),
+  location: PropTypes.shape({
+    state: PropTypes.shape({ url: PropTypes.string.isRequired }),
   }).isRequired,
 }
 

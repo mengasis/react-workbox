@@ -14,14 +14,17 @@ const StyleLink = styled(Link)`
   }
 `
 
-const Box = ({ id, title }) => (
+const Box = ({ id, url, title }) => (
   <Container>
-    <StyleLink to={`/Film/${id}?format=json`}>{title}</StyleLink>
+    <StyleLink to={{ pathname: `/Film/${id}`, search: '?format=json', state: { url } }}>
+      {title}
+    </StyleLink>
   </Container>
 )
 
 Box.propTypes = {
   id: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }
 
