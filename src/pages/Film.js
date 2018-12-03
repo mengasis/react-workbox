@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 
+import episodeFormat from '../utils/episodeFormat'
+
 import Container from '../components/Container'
 import Opening from '../components/Opening'
 
@@ -10,17 +12,23 @@ class Film extends Component {
 
   async componentDidMount() {
     const { location } = this.props
-    const { data } = await axios.get(`${location.state.url}?format=json`)
+    const { data = { title: '', opening_crawl: '', episode_id: '' } } = await axios.get(
+      `${location.state.url}?format=json`,
+    )
 
-    this.setState({ title: data.title, description: data.opening_crawl })
+    this.setState({
+      title: data.title.toUpperCase(),
+      description: data.opening_crawl,
+      episode: episodeFormat(data.episode_id),
+    })
   }
 
   render() {
-    const { title, description } = this.state
+    const { title, description, episode } = this.state
 
     return (
       <Container>
-        <Opening title={title} description={description} />
+        <Opening episode={episode} title={title} description={description} />
       </Container>
     )
   }

@@ -2,13 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Title from './Title'
-/**
- *   display: grid;
-  grid-template-rows: 1fr 2fr;
-  justify-items: center;
-  gap: 30px;
- */
 const Content = styled.div`
   animation: scroll 250s linear 0s;
   position: absolute;
@@ -54,16 +47,22 @@ const Text = styled.p`
   font-size: 50px;
 `
 
-const Opening = ({ title, description }) => (
+const Opening = ({ episode, title, description }) => (
   <Animation>
     <Content>
+      <Text>{`Episode ${episode}`}</Text>
       <Text>{title}</Text>
       <Text>{description}</Text>
     </Content>
   </Animation>
 )
 
-Opening.propTypes = { title: PropTypes.string, description: PropTypes.string }
-Opening.defaultProps = { title: '', description: '' }
+Opening.propTypes = {
+  episode: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+}
+
+Opening.defaultProps = { episode: '', title: '', description: '' }
 
 export default Opening
