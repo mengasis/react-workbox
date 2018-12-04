@@ -21,7 +21,19 @@ const Animation = styled.div`
   height: 50em;
   width: 18em;
   bottom: 0;
-  left: 50%;
+
+  @media (max-width: 576px) {
+    max-width: 320px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    max-width: 620px;
+  }
+
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 
   :after {
     position: absolute;
@@ -45,6 +57,10 @@ const Text = styled.p`
   color: #ffff82;
   text-align: center;
   font-size: 50px;
+
+  @media (max-width: 576px) {
+    font-size: 24px;
+  }
 `
 
 const Opening = ({ episode, title, description }) => (
