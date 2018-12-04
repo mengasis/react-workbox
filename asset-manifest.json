@@ -1,0 +1,15 @@
+{
+  "main.css": "/starwars-films-workbox/static/css/main.7a5b021b.chunk.css",
+  "main.js": "/starwars-films-workbox/static/js/main.e19663b0.chunk.js",
+  "main.js.map": "/starwars-films-workbox/static/js/main.e19663b0.chunk.js.map",
+  "static/js/1.295408bc.chunk.js": "/starwars-films-workbox/static/js/1.295408bc.chunk.js",
+  "static/js/1.295408bc.chunk.js.map": "/starwars-films-workbox/static/js/1.295408bc.chunk.js.map",
+  "runtime~main.js": "/starwars-films-workbox/static/js/runtime~main.e6581b6f.js",
+  "runtime~main.js.map": "/starwars-films-workbox/static/js/runtime~main.e6581b6f.js.map",
+  "static/media/audio.mp3": "/starwars-films-workbox/static/media/audio.92ed57e2.mp3",
+  "static/css/main.7a5b021b.chunk.css.map": "/starwars-films-workbox/static/css/main.7a5b021b.chunk.css.map",
+  "index.html": "/starwars-films-workbox/index.html",
+  "precache-manifest.95eb51f2e7a3b065b0ba593af610b51e.js": "/starwars-films-workbox/precache-manifest.95eb51f2e7a3b065b0ba593af610b51e.js",
+  "service-worker.js": "/starwars-films-workbox/service-worker.js",
+  "precache-manifest.de04d04e63e58bb623ea4955c3dd5b93.js": "/starwars-films-workbox/precache-manifest.de04d04e63e58bb623ea4955c3dd5b93.js"
+}
