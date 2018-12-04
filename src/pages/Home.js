@@ -5,11 +5,13 @@ import Container from '../components/Container'
 import Title from '../components/Title'
 import List from '../components/List'
 import Box from '../components/Box'
+import Loading from '../components/Loading'
 
 class App extends Component {
-  state = { films: [] }
+  state = { fetching: false, films: [] }
 
   async componentDidMount() {
+    this.setState({ fetching: true })
     const { data } = await axios.get('https://swapi.co/api/films/?format=json')
 
     const films = data.results.map(film => ({
@@ -18,20 +20,24 @@ class App extends Component {
       url: film.url,
     })) || []
 
-    this.setState({ films })
+    this.setState({ films, fetching: false })
   }
 
   render() {
-    const { films } = this.state
+    const { films, fetching } = this.state
 
     return (
       <Container>
         <Title>Films Star Wars</Title>
-        <List>
-          {films.map(film => (
-            <Box key={film.id} {...film} />
-          ))}
-        </List>
+        {fetching ? (
+          <Loading />
+        ) : (
+          <List>
+            {films.map(film => (
+              <Box key={film.id} {...film} />
+            ))}
+          </List>
+        )}
       </Container>
     )
   }
