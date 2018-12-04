@@ -16,9 +16,7 @@ const StyleLink = styled(Link)`
 
 const Box = ({ id, url, title }) => (
   <Container>
-    <StyleLink to={{ pathname: `/Film/${id}`, search: '?format=json', state: { url } }}>
-      {title}
-    </StyleLink>
+    <StyleLink to={{ pathname: `/Film/${id}`, state: { url } }}>{title}</StyleLink>
   </Container>
 )
 
