@@ -8,8 +8,10 @@ import Home from './pages/Home'
 import Film from './pages/Film'
 import Error404 from './pages/Error404'
 
+console.log(process.env.PUBLIC_URL)
+
 const Root = (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/film/:id" component={Film} />
