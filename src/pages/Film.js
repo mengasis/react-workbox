@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 
 import episodeFormat from '../utils/episodeFormat'
+import audio from '../data/audio.mp3'
 
 import Container from '../components/Container'
 import Opening from '../components/Opening'
@@ -28,6 +29,9 @@ class Film extends Component {
 
     return (
       <Container>
+        <audio preload="auto" src={audio} autoPlay>
+          <track kind="captions" />
+        </audio>
         <Opening episode={episode} title={title} description={description} />
       </Container>
     )
