@@ -1,7 +1,8 @@
 {
-  "name": "films-starwars",
+  "name": "starwars-films",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mengasis.github.io/starwars-films-workbox/",
   "dependencies": {
     "axios": "^0.18.0",
     "prop-types": "^15.6.2",
@@ -17,11 +18,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:sw": "yarn build:sw && serve -s ./build -p 3000",
+    "prestart:sw": "react-app-rewired build",
+    "start:sw": "serve -s ./build -p 3000",
     "build": "react-scripts build",
     "build:sw": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build:sw",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
